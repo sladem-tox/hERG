@@ -1,0 +1,22 @@
+
+#Time Comparison CPU vs GPU for 100 Active Learning Queries
+
+*CPU only test, 100 queries*
+real	25m0.677s
+user	96m44.897s
+sys	0m12.327s
+
+
+*GPU using cuda 12.4, GTX860M*
+
+real	1m46.495s
+user	1m39.952s
+sys	0m10.141s
+
+speedup = 106 s / (25*60) S
+
+
+that is 106 / 1500 
+
+basically almost 15 times faster.
+

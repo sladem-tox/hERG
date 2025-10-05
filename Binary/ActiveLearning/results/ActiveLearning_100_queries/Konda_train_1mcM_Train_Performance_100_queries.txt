@@ -1,0 +1,4 @@
+Final accuracy after TS active learning: 0.823
+Test F1 Score: 0.539
+Test Precision: 0.539
+Test Recall: 0.539
