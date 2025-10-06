@@ -1,0 +1,3 @@
+Final MSE after TS active learning: 0.958
+Final MAE after TS active learning: 0.714
+Final R² after TS active learning: -0.020

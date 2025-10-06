@@ -1,0 +1,3 @@
+Final test MSE after active learning: 0.920
+Final test MAE after active learning: 0.710
+Final test R² after active learning: 0.119

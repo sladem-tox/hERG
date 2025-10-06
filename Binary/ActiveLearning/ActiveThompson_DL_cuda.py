@@ -44,11 +44,12 @@ Model_name = os.path.join(run_dir, filename_base + f'_Thompson_AL_model_{q_num}_
 Pred_filename = os.path.join(run_dir, filename_base + f'_Predictions_{q_num}_queries.csv')
 Holdout_filename = os.path.join(run_dir, filename_base + f'_Holdout_Performance_{q_num}_queries.txt')
 
-# Don't need to change below this line
 X = df.drop(columns=['COMPOUND_ID', 'target'])
 y = df['target']
 print("Initial dimensions of the dataset, X is:", X.shape,"and y is:", y.shape)
 
+# Test file saved for the holdout evaluation at the end
+# Train file used for active learning
 # 1. First split off the test set (20%)
 X_train_pool, X_test, y_train_pool, y_test = train_test_split(
     X, y, test_size=0.2, stratify=y, random_state=42
@@ -169,8 +170,7 @@ for i in track(range(q_num), description="Active Learning Iterations"):  # numbe
 
     print(f"Training set size: {len(X_train)} | Pool size: {len(X_pool)}")
 
-# ----- Final evaluation -----
-print("\nTraining complete. Evaluating final model on held out test set...")
+# ----- Final training evaluation -----
 X_test_tensor = to_tensor(X_test).to(device)
 model.eval()
 with torch.no_grad():
@@ -206,7 +206,9 @@ with torch.no_grad():
 # Save the model
 torch.save(model.state_dict(), Model_name)
 
-# Load the model and evaluate on the test set
+print("\nTraining complete. Evaluating final model on held out test set...")
+
+# Load the model and evaluate on the holdout test set
 model = DropoutNet(input_dim=X_train.shape[1])
 model.load_state_dict(torch.load(Model_name))
 model.to(device)
