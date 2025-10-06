@@ -85,7 +85,7 @@ Predictions CSV + model weights
 
 Optionally, use Rich to print metrics in color during loop.
 
-💡 Tip:
+##Also maybe:
 
 Make a new Python file for each experiment, e.g., exp_2a_deeper_net.py, exp_3b_ELU.py.
 
