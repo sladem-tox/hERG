@@ -21,4 +21,7 @@ E.g.
 
 Then the scripts are set up to take 3 arguments: training_file.csv, test_file.csv, and --q_num [number of queries]
 
+At this stage just set up for 2048 bit ECFP's for simplicity.
+
+
 
