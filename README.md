@@ -17,7 +17,7 @@ Use the environment.yaml file to create a conda environment with all dependencie
 
 E.g.
 
-'conda env create -n new_env_name -f environment.yaml'
+`conda env create -n new_env_name -f environment.yaml`
 
 Then the scripts are set up to take 3 arguments: training_file.csv, test_file.csv, and --q_num [number of queries]
 
