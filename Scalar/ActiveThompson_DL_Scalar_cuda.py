@@ -199,7 +199,7 @@ with torch.no_grad():
 
 # ----- Plotting training results -----
 plt.figure(figsize=(8,5))
-plt.plot(range(1, len(r2_scores)+1), r2_scores, marker='o')
+plt.plot(range(1, len(r2_scores)+1), r2_scores, marker='o') 
 plt.title(f"R² on Test Set Over {q_num} Active Learning Iterations")
 plt.xlabel("Active Learning Iteration")
 plt.ylabel("R² Score")
