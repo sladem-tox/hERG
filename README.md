@@ -19,9 +19,14 @@ E.g.
 
 `conda env create -n new_env_name -f environment.yaml`
 
-Then the scripts are set up to take 3 arguments: training_file.csv, test_file.csv, and --q_num [number of queries]
+Then the Thompson AL scripts are set up to take 3 arguments: training_file.csv, test_file.csv, and --q_num [number of queries]
 
 At this stage just set up for 2048 bit ECFP's for simplicity.
+
+3. Optuna
+
+I have added some Optuna scripts with basic regression models for comparison with the active learning methods.
+I will also add Optuna for selection of the optimal params for the MC Droptout NN used in the Thompson Sampling neural network.
 
 
 
