@@ -11,6 +11,13 @@ Uncertainty is determined by contrasting predictions with 0.5 thresold and the s
 These models attempt to predict pIC50 values directly. A Thompson sampling active learning approach is used.
 Uncertainty is determined via application of MC dropout on the neural network to generate a prediction sample for each molecule.
 
+3. Optuna
+
+I have added some Optuna scripts with basic regression models for comparison with the active learning methods.
+
+I will also add Optuna for selection of the optimal params for the MC Droptout NN used in the Thompson Sampling neural network.
+
+
 ## Setup
 
 Use the environment.yaml file to create a conda environment with all dependencies.
@@ -23,10 +30,7 @@ Then the Thompson AL scripts are set up to take 3 arguments: training_file.csv, 
 
 At this stage just set up for 2048 bit ECFP's for simplicity.
 
-3. Optuna
 
-I have added some Optuna scripts with basic regression models for comparison with the active learning methods.
-I will also add Optuna for selection of the optimal params for the MC Droptout NN used in the Thompson Sampling neural network.
 
 
 
