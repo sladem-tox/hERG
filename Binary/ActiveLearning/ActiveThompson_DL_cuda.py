@@ -137,6 +137,7 @@ print("Starting Active Learning loop...")
 f1_scores = []
 for i in track(range(q_num), description="Active Learning Iterations"):  # number of active learning iterations
     print(f"\n--- Active Learning Iteration {i + 1} ---")
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3) # reinitialize optimizer each iteration can work without this.
     train_model(model, X_train_tensor, y_train_tensor, epochs=50)
     
     # Evaluate on test set
